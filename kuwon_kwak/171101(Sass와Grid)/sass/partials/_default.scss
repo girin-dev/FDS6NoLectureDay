@@ -1,0 +1,20 @@
+.grid {
+  background: yellowgreen;
+}
+
+.col {
+  min-height: 100px;
+  border: 1px solid black;
+}
+
+.col:nth-child(odd) {
+  border: 1px dotted blue;
+}
+
+.a11y-hidden {
+  @include a11y-hidden;
+}
+
+.hidden {
+  @include hidden;
+}

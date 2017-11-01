@@ -1,0 +1,152 @@
+.container {
+  @include clearfix;
+}
+
+.grid {
+  position: relative;
+  margin: 0 auto;
+
+  @include clearfix;
+}
+
+.row {
+  position: relative;
+  width: 100%;
+  @include clearfix;
+}
+
+.col {
+  position: relative;
+  box-sizing: border-box;
+  float: left;
+}
+
+@media screen and (max-width: 599px) {
+  $grid_width: 100%;
+  $gutter: 1.6%;
+  $half_gutter: $gutter / 2;
+  $col_width: (100% - ($gutter * 3)) / 4;
+
+  .grid {
+    width: $grid_width;
+  }
+  .col {
+    margin-left: $half_gutter;
+    margin-right: $half_gutter;
+  }
+  .s-alpha {
+    margin-left: 0;
+  }
+  .s-omega {
+    margin-right: 0;
+  }
+  .s-a11y-hidden {
+    @include a11y-hidden;
+  }
+  .s-hidden {
+    @include hidden;
+  }
+
+  @for $i from 1 through 4 {
+    .s-col-#{$i} {
+      width: $col_width * $i + ($gutter * ($i - 1));
+    }
+    .s-col-push-#{$i}  {
+      left: $col_width * $i + $gutter * $i;
+    }
+    .s-col-pull-#{$i} {
+      right: $col_width * $i + $gutter * $i;
+    }
+    .s-col-offset-#{$i} {
+      margin-left: $col_width * $i + $gutter * $i + $half_gutter;
+    }
+  }
+}
+
+
+@media screen and (min-width: 600px) and (max-width: 959px) {
+  $grid_width: 80%;
+  $gutter: 1.6%;
+  $half_gutter: $gutter / 2;
+  $col_width: (100% - ($gutter * 7)) / 8;
+
+  .grid {
+    width: $grid_width;
+  }
+  .col {
+    margin-left: $half_gutter;
+    margin-right: $half_gutter;
+  }
+  .m-alpha {
+    margin-left: 0;
+  }
+  .m-omega {
+    margin-right: 0;
+  }
+  .m-a11y-hidden {
+    @include a11y-hidden;
+  }
+  .m-hidden {
+    @include hidden;
+  }
+
+
+  @for $i from 1 through 8 {
+    .m-col-#{$i} {
+      width: $col_width * $i + ($gutter * ($i - 1));
+    }
+    .m-col-push-#{$i}  {
+      left: $col_width * $i + $gutter * $i;
+    }
+    .m-col-pull-#{$i} {
+      right: $col_width * $i + $gutter * $i;
+    }
+    .m-col-offset-#{$i} {
+      margin-left: $col_width * $i + $gutter * $i + $half_gutter;
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  $grid_width: 80%;
+  $gutter: 1.6%;
+  $half_gutter: $gutter / 2;
+  $col_width: (100% - ($gutter * 11)) / 12;
+
+  .grid {
+    width: $grid_width;
+    max-width: 1000px;
+  }
+  .col {
+    margin-left: $half_gutter;
+    margin-right: $half_gutter;
+  }
+  .l-alpha {
+    margin-left: 0;
+  }
+  .l-omega {
+    margin-right: 0;
+  }
+  .l-a11y-hidden {
+    @include a11y-hidden;
+  }
+  .l-hidden {
+    @include hidden;
+  }
+
+
+  @for $i from 1 through 12 {
+    .l-col-#{$i} {
+      width: $col_width * $i + ($gutter * ($i - 1));
+    }
+    .l-col-push-#{$i}  {
+      left: $col_width * $i + $gutter * $i;
+    }
+    .l-col-pull-#{$i} {
+      right: $col_width * $i + $gutter * $i;
+    }
+    .l-col-offset-#{$i} {
+      margin-left: $col_width * $i + $gutter * $i + $half_gutter;
+    }
+  }
+}
